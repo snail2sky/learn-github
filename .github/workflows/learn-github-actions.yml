@@ -8,8 +8,14 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      # - name: Check out repository code
-      #   uses: actions/checkout@v4
+      - name: 查看目录是否有文件
+        run: ls -a
+        
+      - name: Check out repository code
+        uses: actions/checkout@v4
+        
+      - name: 查看目录是否有文件
+        run: ls -a
       - name: 查看当前所在目录
         run: pwd
 
