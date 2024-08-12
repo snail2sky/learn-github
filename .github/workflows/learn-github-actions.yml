@@ -5,26 +5,20 @@ on:
     branches:
       - main
 jobs:
-  Explore-GitHub-Actions:
+  demo-job1:
     runs-on: ubuntu-latest
     steps:
-      - name: 查看目录是否有文件
-        run: ls -a
-        
-      - name: Check out repository code
-        uses: actions/checkout@v4
-        
-      - name: 查看目录是否有文件
-        run: ls -a
-      - name: 查看当前所在目录
-        run: pwd
-
-      - name: 查看当前用户id
-        run: id
-
-      - name: 查看当前机器公网IP
+      - name: 耗时工作
+        run: sleep 3
+  
+      - name: 查看公网ip
         run: curl -s ip.sb
 
-      - name: 查看当前机器私网IP
-        run: ip addr
+  demo-job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 耗时工作
+        run: sleep 3
 
+      - name: 查看内网IP
+        run: ip a
